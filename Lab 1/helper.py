@@ -5,6 +5,7 @@ from dotenv import load_dotenv, find_dotenv
 
 # Set the API key directly
 os.environ["OPENAI_API_KEY"] = "your-key-goes-here"
+os.environ["PHOENIX_COLLECTOR_ENDPOINT"] = "http://localhost:6006/"
 
 def load_env():
     _ = load_dotenv(find_dotenv(), override=True)
