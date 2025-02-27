@@ -5,7 +5,6 @@ import duckdb
 from pydantic import BaseModel, Field
 from IPython.display import Markdown
 
-
 import phoenix as px
 import os
 from openinference.instrumentation.openai import OpenAIInstrumentor
@@ -14,6 +13,8 @@ from openinference.instrumentation import TracerProvider
 from phoenix.otel import register
 from dotenv import load_dotenv, find_dotenv
 
+os.environ["OPENAI_API_KEY"] = "key-goes-here"
+os.environ["PHOENIX_COLLECTOR_ENDPOINT"] = "http://localhost:6006/"
 
 def load_env():
     _ = load_dotenv(find_dotenv(), override=True)
